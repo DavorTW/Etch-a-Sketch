@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector(".grid-container");
-let numberOfSquares = 64;
+let numberOfSquares = 16;
 const GRID_CONTAINER_WIDTH = 512;
 
 for (let i = 0; i < (numberOfSquares*numberOfSquares); i++) { 
