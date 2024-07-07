@@ -52,3 +52,12 @@ slider.addEventListener("mouseup", () => {
     gridContainer.textContent = '';
     createGrid(numberOfSquares);
 });
+
+const clearButton = document.querySelector(".clear-grid");
+
+clearButton.addEventListener("click", () => {
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach(grid => {
+        grid.style.backgroundColor = "white";
+    })
+})

@@ -12,9 +12,29 @@ html {
     margin: 0 auto;
 }
 
+p{
+    margin: 0;
+}
+
 h1{
     text-align: center;
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .grid-container{
     width: 516px;
     margin: 0 auto;
