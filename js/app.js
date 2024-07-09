@@ -29,6 +29,7 @@ function createGrid(numberOfSquares){
 createGrid(numberOfSquares);
 
 rainbow.addEventListener("click", () => {
+    gridContainer.textContent = "";
     rainbow.classList.toggle("active");
     createGrid(numberOfSquares);
 })
