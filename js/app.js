@@ -2,7 +2,10 @@ const GRID_CONTAINER_WIDTH = 512;
 let numberOfSquares = 16;
 let mouseIsDown = false;
 
+
 const gridContainer = document.querySelector(".grid-container");
+const rainbow = document.querySelector(".rainbow");
+
 
 function createGrid(numberOfSquares){
     for (let i = 0; i < (numberOfSquares*numberOfSquares); i++) { 
@@ -16,18 +19,28 @@ function createGrid(numberOfSquares){
 
         gridContainer.appendChild(grid);
     }
-    drawSquares()
+    
+    if (rainbow.classList.contains("active")) {
+        drawRainbowSquares();
+    }else{
+        drawBlackSquares();
+    }
 }
-
 createGrid(numberOfSquares);
 
-function drawSquares(){
+rainbow.addEventListener("click", () => {
+    rainbow.classList.toggle("active");
+    createGrid(numberOfSquares);
+})
+
+
+function drawBlackSquares(){
     const grids = document.querySelectorAll(".grid");
     grids.forEach( grid => {
         grid.addEventListener("mousedown", () =>{mouseIsDown=true});
         grid.addEventListener("mouseup", () => {mouseIsDown=false});
         grid.addEventListener("mousemove", ()=> {
-            if(mouseIsDown){
+            if (mouseIsDown) {
                 grid.style.backgroundColor = "black";
             }
         })
@@ -61,3 +74,21 @@ clearButton.addEventListener("click", () => {
         grid.style.backgroundColor = "white";
     })
 })
+
+function drawRainbowSquares(){
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach( grid => {
+        grid.addEventListener("mousedown", () => {mouseIsDown = true});
+        grid.addEventListener("mouseup", () => {mouseIsDown = false});
+        grid.addEventListener("mousemove", () => {
+            if (mouseIsDown) {
+                grid.style.backgroundColor = generateRandomColor();
+            }
+        })
+    })
+}
+
+function generateRandomColor(){
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return `#${randomColor}`;
+}
