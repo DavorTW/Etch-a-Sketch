@@ -7,6 +7,10 @@ html {
   box-sizing: inherit;
 }
 
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
 .container{
     max-width: 80%;
     margin: 0 auto;
@@ -28,6 +32,21 @@ h1{
     margin-bottom: 10px;
 }
 
+.btn{
+    border: none;
+    background-color: #a2d2ff;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #ffc8dd;
+}
+
+.btn.active{
+    background-color: #ffc8dd;
+}
+
 .slider-container{
     display: flex;
     flex-direction: column;
@@ -36,9 +55,10 @@ h1{
 }
 
 .grid-container{
-    width: 516px;
+    width: 512px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    border: solid 2px red;
+    /* border: solid 2px #d9d9d9; */
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.36);
 }
